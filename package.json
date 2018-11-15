@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "nodemon": "node_modules/.bin/nodemon secret-server.js"
+    "timeserver": "node_modules/.bin/nodemon time-server.js",
+    "secretserver": "node_modules/.bin/nodemon secret-server.js",
+    "sechiserver": "node_modules/.bin/nodemon sechisrv.js",
+    "nodemon": "npm run timeserver & npm run secretserver & npm run sechiserver"
   },
   "author": "",
   "license": "ISC",
