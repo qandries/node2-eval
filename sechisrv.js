@@ -1,9 +1,11 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const cors = require('cors');
 
 const port = 4002;
 
 const app = express();
+app.use(cors());
 
 const storage= [];
 

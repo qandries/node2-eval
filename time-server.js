@@ -1,8 +1,10 @@
 const express = require('express');
-
+const cors = require('cors');
 const port = 4000;
 
 const app = express();
+
+app.use(cors());
 
 // Send Time 00:00:00 in blue
 app.get('/', function (req, res) {

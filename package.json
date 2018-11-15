@@ -8,7 +8,8 @@
     "timeserver": "node_modules/.bin/nodemon time-server.js",
     "secretserver": "node_modules/.bin/nodemon secret-server.js",
     "sechiserver": "node_modules/.bin/nodemon sechisrv.js",
-    "nodemon": "npm run timeserver & npm run secretserver & npm run sechiserver"
+    "app": "node_modules/.bin/nodemon index.js",
+    "nodemon": "npm run timeserver & npm run secretserver & npm run sechiserver & npm run app"
   },
   "author": "",
   "license": "ISC",

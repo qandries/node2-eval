@@ -2,9 +2,12 @@ const express = require('express');
 const fs = require('fs-extra');
 const bodyParser = require('body-parser');
 const { base64encode, base64decode } = require('nodejs-base64');
+const cors = require('cors');
 const port = 4001;
 const app = express();
+
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get('/secret', (req, res) => {
     let secret;
@@ -31,7 +34,6 @@ app.put('/secret', (req, res) => {
         });
 });
 
-app.use('/data', express.static(__dirname + '/data'));
 
 app.listen(port, () => {
     console.log(`Listening on ${port}`)
