@@ -1,0 +1,1 @@
+../../node_modules/vue-select/dist/vue-select.js
