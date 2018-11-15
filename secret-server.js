@@ -17,6 +17,7 @@ app.get('/secret', (req, res) => {
             res.json(secret)
         })
         .catch(err => {
+            res.send('ERROR');
             console.log(err)
         });
 });
@@ -30,6 +31,7 @@ app.put('/secret', (req, res) => {
             res.sendStatus(200);
         })
         .catch(err => {
+            res.send('ERROR');
             console.log(err)
         });
 });

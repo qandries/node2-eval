@@ -19,6 +19,9 @@ Vue.component("v-select", VueSelect.VueSelect);
                 secretUpdate: '',
             },
             logs: [],
+            buttonSort: {
+                text: 'Ascending'
+            }
         },
         template: `
         <div>
@@ -31,6 +34,7 @@ Vue.component("v-select", VueSelect.VueSelect);
             <button type="submit" v-on:click="update">Update</button>
             <div>
             <h2>Results</h2>:{{logs.length}}
+            <button type="button" v-on:click="sortInvert">{{ buttonSort.text }} </button>
             <div id="result" >
                <ul v-for="log in logs">
                     <li>{{ log }}</li>
@@ -54,6 +58,15 @@ Vue.component("v-select", VueSelect.VueSelect);
                     .catch(err => {
                         console.log(err)
                     })
+            },
+            sortInvert: function () {
+                if (this.buttonSort.text == 'Descending') {
+                    this.buttonSort.text = 'Ascending';
+                    console.log("invert")
+                } else {
+                    this.buttonSort.text = 'Descending';
+                    console.log("reverst")
+                }
             },
             setLogs: function(e) {
 
